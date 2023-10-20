@@ -41,4 +41,6 @@ Thumbs.db
 
 # github confidential file
 github-app-config.json
+
+# environment variables
 .env

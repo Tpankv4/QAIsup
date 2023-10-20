@@ -1,0 +1,15 @@
+version: '3'
+services:
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: patternatlas
+      POSTGRES_PASSWORD: patternatlas
+      POSTGRES_DB: patternatlas
+    ports:
+      - "5060:5432"
+    networks:
+      - default
+networks:
+  default:
+    driver: bridge

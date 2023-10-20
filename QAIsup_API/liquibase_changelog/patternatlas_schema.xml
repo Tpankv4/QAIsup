@@ -1,0 +1,569 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.6.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
+    <changeSet author="alex (generated)" id="1646838986180-1">
+        <createTable tableName="undirected_edge">
+            <column name="id" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+            <column name="description" type="JSONB"/>
+            <column name="type" type="VARCHAR(255)"/>
+            <column name="p1_id" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+            <column name="p2_id" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+            <column name="pattern_language_id" type="UUID"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="alex (generated)" id="1646838986180-2">
+        <createTable tableName="directed_edge">
+            <column name="id" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+            <column name="description" type="JSONB"/>
+            <column name="type" type="VARCHAR(255)"/>
+            <column name="pattern_language_id" type="UUID"/>
+            <column name="source_id" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+            <column name="target_id" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="alex (generated)" id="1646838986180-3">
+        <createTable tableName="candidate">
+            <column name="id" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+            <column name="name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="uri" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="content" type="JSONB"/>
+            <column name="icon_url" type="VARCHAR(255)"/>
+            <column name="rating" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="version" type="VARCHAR(255)"/>
+            <column name="pattern_language_id" type="UUID"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="alex (generated)" id="1646838986180-4">
+        <createTable tableName="user_entity">
+            <column name="id" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+            <column name="email" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="password" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="alex (generated)" id="1646838986180-5">
+        <createTable tableName="pattern">
+            <column name="id" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+            <column name="name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="uri" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="content" type="JSONB">
+                <constraints nullable="false"/>
+            </column>
+            <column name="icon_url" type="VARCHAR(255)"/>
+            <column name="rendered_content" type="JSONB"/>
+            <column name="pattern_language_id" type="UUID"/>
+            <column name="paper_ref" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="alex (generated)" id="1646838986180-6">
+        <createTable tableName="issue">
+            <column name="id" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+            <column name="name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="uri" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="description" type="VARCHAR(255)"/>
+            <column name="rating" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="version" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="alex (generated)" id="1646838986180-7">
+        <createTable tableName="role">
+            <column name="id" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+            <column name="name" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="alex (generated)" id="1646838986180-8">
+        <createTable tableName="pattern_section_schema_pattern_sections">
+            <column name="pattern_section_schema_id" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+            <column name="pattern_sections_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="alex (generated)" id="1646838986180-9">
+        <createTable tableName="directed_hyperedge_source_set">
+            <column name="directed_hyperedge_id" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+            <column name="source_set_id" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="alex (generated)" id="1646838986180-10">
+        <createTable tableName="design_model">
+            <column name="id" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="uri" type="VARCHAR(255)"/>
+            <column name="logo" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="alex (generated)" id="1646838986180-11">
+        <createTable tableName="undirected_hyperedge_patterns">
+            <column name="undirected_hyperedge_id" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+            <column name="patterns_id" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="alex (generated)" id="1646838986180-12">
+        <createTable tableName="pattern_view">
+            <column name="id" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+            <column name="name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="uri" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="graph" type="JSONB"/>
+            <column name="logo" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="alex (generated)" id="1646838986180-13">
+        <createTable tableName="privilege">
+            <column name="id" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+            <column name="name" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="alex (generated)" id="1646838986180-14">
+        <createTable tableName="directed_hyperedge_target_set">
+            <column name="directed_hyperedge_id" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+            <column name="target_set_id" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="alex (generated)" id="1646838986180-15">
+        <createTable tableName="pattern_language">
+            <column name="id" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+            <column name="name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="uri" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="graph" type="JSONB"/>
+            <column name="creative_commons_reference" type="VARCHAR(255)"/>
+            <column name="logo" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="alex (generated)" id="1646838986180-16">
+        <createTable tableName="candidate_author">
+            <column name="role" type="VARCHAR(255)"/>
+            <column name="candidate_id" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+            <column name="user_id" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="alex (generated)" id="1646838986180-17">
+        <createTable tableName="candidate_comment">
+            <column name="id" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+            <column name="rating" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="text" type="VARCHAR(255)"/>
+            <column name="candidate_id" type="UUID"/>
+            <column name="user_id" type="UUID"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="alex (generated)" id="1646838986180-18">
+        <createTable tableName="candidate_comment_rating">
+            <column name="rating" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="candidate_comment_id" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+            <column name="user_id" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="alex (generated)" id="1646838986180-19">
+        <createTable tableName="candidate_evidence">
+            <column name="id" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+            <column name="context" type="VARCHAR(255)"/>
+            <column name="source" type="VARCHAR(255)"/>
+            <column name="supporting" type="BOOLEAN"/>
+            <column name="title" type="VARCHAR(255)"/>
+            <column name="type" type="VARCHAR(255)"/>
+            <column name="candidate_id" type="UUID"/>
+            <column name="user_id" type="UUID"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="alex (generated)" id="1646838986180-20">
+        <createTable tableName="candidate_evidence_rating">
+            <column name="rating" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="candidate_evidence_id" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+            <column name="user_id" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="alex (generated)" id="1646838986180-21">
+        <createTable tableName="candidate_rating">
+            <column name="rating" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="candidate_id" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+            <column name="user_id" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+            <column name="appropriateness" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="readability" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="understandability" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="alex (generated)" id="1646838986180-22">
+        <createTable tableName="concrete_solution">
+            <column name="id" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+            <column name="aggregator_type" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="pattern_uri" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="template_uri" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="alex (generated)" id="1646838986180-23">
+        <createTable tableName="design_model_edge_type">
+            <column name="name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="swap" type="BOOLEAN">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="alex (generated)" id="1646838986180-24">
+        <createTable tableName="design_model_pattern_edge">
+            <column name="pattern_instance1_pattern_instance_id" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+            <column name="pattern_instance2_pattern_instance_id" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+            <column name="design_model_id" type="UUID"/>
+            <column name="type" type="VARCHAR(255)"/>
+            <column name="description" type="VARCHAR(255)"/>
+            <column name="is_directed_edge" type="BOOLEAN"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="alex (generated)" id="1646838986180-25">
+        <createTable tableName="design_model_pattern_instance">
+            <column name="pattern_instance_id" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+            <column name="pattern_id" type="UUID"/>
+            <column name="design_model_id" type="UUID"/>
+            <column name="type" type="VARCHAR(255)"/>
+            <column name="index" type="INTEGER"/>
+            <column name="x" type="FLOAT8"/>
+            <column name="y" type="FLOAT8"/>
+            <column name="vx" type="FLOAT8"/>
+            <column name="vy" type="FLOAT8"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="alex (generated)" id="1646838986180-26">
+        <createTable tableName="design_model_undirected_edge">
+            <column name="design_model_id" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+            <column name="undirected_edge_id" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="alex (generated)" id="1646838986180-27">
+        <createTable tableName="directed_hyperedge">
+            <column name="id" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+            <column name="description" type="JSONB"/>
+            <column name="type" type="VARCHAR(255)"/>
+            <column name="label" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="alex (generated)" id="1646838986180-28">
+        <createTable tableName="discussion_comment">
+            <column name="id" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+            <column name="date" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="reply_to" type="UUID"/>
+            <column name="text" type="VARCHAR(255)"/>
+            <column name="discussion_topic_id" type="UUID"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="alex (generated)" id="1646838986180-29">
+        <createTable tableName="discussion_topic">
+            <column name="id" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+            <column name="date" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="description" type="VARCHAR(255)"/>
+            <column name="fill" type="VARCHAR(255)"/>
+            <column name="height" type="FLOAT8"/>
+            <column name="image_id" type="UUID"/>
+            <column name="status" type="INTEGER"/>
+            <column name="title" type="VARCHAR(255)"/>
+            <column name="width" type="FLOAT8"/>
+            <column name="x" type="FLOAT8"/>
+            <column name="y" type="FLOAT8"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="alex (generated)" id="1646838986180-30">
+        <createTable tableName="image">
+            <column name="id" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+            <column name="data" type="OID"/>
+            <column name="file_name" type="VARCHAR(255)"/>
+            <column name="file_type" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="alex (generated)" id="1646838986180-31">
+        <createTable tableName="issue_author">
+            <column name="role" type="VARCHAR(255)"/>
+            <column name="issue_id" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+            <column name="user_id" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="alex (generated)" id="1646838986180-32">
+        <createTable tableName="issue_comment">
+            <column name="id" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+            <column name="rating" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="text" type="VARCHAR(255)"/>
+            <column name="issue_id" type="UUID"/>
+            <column name="user_id" type="UUID"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="alex (generated)" id="1646838986180-33">
+        <createTable tableName="issue_comment_rating">
+            <column name="rating" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="issue_comment_id" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+            <column name="user_id" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="alex (generated)" id="1646838986180-34">
+        <createTable tableName="issue_evidence">
+            <column name="id" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+            <column name="context" type="VARCHAR(255)"/>
+            <column name="source" type="VARCHAR(255)"/>
+            <column name="supporting" type="BOOLEAN"/>
+            <column name="title" type="VARCHAR(255)"/>
+            <column name="type" type="VARCHAR(255)"/>
+            <column name="issue_id" type="UUID"/>
+            <column name="user_id" type="UUID"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="alex (generated)" id="1646838986180-35">
+        <createTable tableName="issue_evidence_rating">
+            <column name="rating" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="issue_evidence_id" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+            <column name="user_id" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="alex (generated)" id="1646838986180-36">
+        <createTable tableName="issue_rating">
+            <column name="rating" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="issue_id" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+            <column name="user_id" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="alex (generated)" id="1646838986180-37">
+        <createTable tableName="pattern_schema">
+            <column name="pattern_language_id" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="alex (generated)" id="1646838986180-38">
+        <createTable tableName="pattern_section">
+            <column name="id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="value" type="TEXT"/>
+            <column name="pattern_section_schema_id" type="UUID"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="alex (generated)" id="1646838986180-39">
+        <createTable tableName="pattern_section_schema">
+            <column name="id" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+            <column name="label" type="VARCHAR(255)"/>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="position" type="INTEGER"/>
+            <column name="type" type="VARCHAR(255)"/>
+            <column name="pattern_schema_pattern_language_id" type="UUID"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="alex (generated)" id="1646838986180-40">
+        <createTable tableName="pattern_view_directed_edge">
+            <column name="directed_edge_id" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+            <column name="pattern_view_id" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="alex (generated)" id="1646838986180-41">
+        <createTable tableName="pattern_view_pattern">
+            <column name="pattern_id" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+            <column name="pattern_view_id" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="alex (generated)" id="1646838986180-42">
+        <createTable tableName="pattern_view_undirected_edge">
+            <column name="pattern_view_id" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+            <column name="undirected_edge_id" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="alex (generated)" id="1646838986180-43">
+        <createTable tableName="role_privileges">
+            <column name="roles_id" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+            <column name="privileges_id" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="alex (generated)" id="1646838986180-44">
+        <createTable tableName="undirected_hyperedge">
+            <column name="id" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+            <column name="description" type="JSONB"/>
+            <column name="type" type="VARCHAR(255)"/>
+            <column name="label" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="alex (generated)" id="1646838986180-45">
+        <createTable tableName="user_entity_roles">
+            <column name="users_id" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+            <column name="roles_id" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>
