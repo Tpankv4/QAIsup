@@ -1,0 +1,34 @@
+<ng-container *patternAtlasUiShowOnFeature="UiFeatures.EDITING">
+  <pp-action-button-bar [goBackButton]="false"
+                        [addButtonText]="'Add View'"
+                        (addClicked)="createView()"
+                        [firstAddPrivilegeName]="'PATTERN_VIEW_CREATE'"></pp-action-button-bar>
+</ng-container>
+
+<div class="container">
+  <mat-card *ngFor="let patternView of patternViewResponse?._embedded?.patternViews"
+            class="landing-card">
+
+    <mat-card-header (click)="navigate(patternView)">
+      <img mat-card-avatar [src]="patternView?.logo || '//via.placeholder.com/50x50'" alt=""/>
+
+      <mat-card-title>
+        {{patternView.name}}
+      </mat-card-title>
+    </mat-card-header>
+
+    <img (click)="navigate(patternView)" mat-card-image [src]="patternView?.logo || '//via.placeholder.com/200x300'"
+         alt=""/>
+    <mat-card-actions>
+      <div style="text-align: center">
+        <button (click)="navigate(patternView)" mat-stroked-button color="primary" aria-label="View"><i
+          class="material-icons">pageview</i> View
+        </button>
+        <button (click)="deletePatternView(patternView)" *patternAtlasUiShowOnFeature="UiFeatures.EDITING"
+                class="pattern-button" mat-stroked-button style="margin-left: 25px" color="warn" aria-label="Delete">
+          <i class="material-icons">delete</i>
+        </button>
+      </div>
+    </mat-card-actions>
+  </mat-card>
+</div>

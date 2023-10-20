@@ -1,0 +1,50 @@
+<pp-navigate-back></pp-navigate-back>
+<h2>
+  Add a new pattern to {{patternLanguage?.name}}
+</h2>
+<div mat-dialog-content [formGroup]="iconForm" style="width: 100%">
+  <div fxLayout="column">
+    <mat-card fxLayout="column" fxLayoutAlign="space-around">
+      <div fxLayout="row">
+        <mat-form-field class="full-width" appearance="outline" style="width: 24em" [floatLabel]="'always'">
+          <mat-label>Icon URL</mat-label>
+          <input matInput formControlName="iconUrl" placeholder="Enter URL of Icon" type="url">
+          <div fxLayout="row" fxLayoutAlign="space-around center" *ngIf="iconPreviewVisible">
+            <span class="label-preview">Icon-Preview: </span>
+            <div mat-card-avatar #iconPreview
+                 [ngStyle]="{ 'background-image': 'url(' + iconUrl?.value + ')'}"
+                 class="example-header-image"></div>
+          </div>
+          <mat-error *ngIf="wasSaveButtonClicked && iconUrl?.hasError('pattern')">Please insert a valid URL.
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="parent ">
+
+        <div class="item editor-preview-container">
+          <td-text-editor ppEmitOnChange (onKeyup)="onChangeMarkdownText()" class="markdownEditor"
+                          [(value)]="previousTextEditorValue" [options]="options"
+                          #textEditor
+                          id="textEditor"></td-text-editor>
+        </div>
+
+        <div class="item last">
+
+          <div id="preview"></div>
+
+          <mat-error *ngIf="wasSaveButtonClicked && errorMessages">Found errors in the following sections:
+            <div *ngFor="let message of errorMessages">
+              <span>{{message}}<br></span>
+            </div>
+          </mat-error>
+
+        </div>
+      </div>
+    </mat-card>
+  </div>
+</div>
+<button [disabled]="iconUrl?.hasError('pattern')" (click)="save()" class="save-button" mat-raised-button color="primary"
+        style="float: right" aria-label="Save"><i
+  class="material-icons">save</i>Save
+</button>

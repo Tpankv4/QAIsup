@@ -1,0 +1,36 @@
+<div class="card-container">
+  <mat-card *ngFor="let entity of uriEntities"
+            class="card box">
+    <mat-card-title style="margin-bottom: 1rem">{{entity.name}}</mat-card-title>
+    <mat-card-content>
+      <img mat-card-image *ngIf="entity.iconUrl else noimage" [src]="entity.iconUrl">
+      <ng-template #noimage><img mat-card-image src="//via.placeholder.com/350x150"></ng-template>
+      <div class="horiz-aligned">
+        <button (click)="navigate(entity)" class="pattern-button" mat-raised-button color="primary">
+          <i class="material-icons">list</i>Details
+        </button>
+        <div *ngIf="p.hasPrivilege('APPROVED_PATTERN_DELETE_ALL') | async">
+          <button (click)="delete(entity)" *patternAtlasUiShowOnFeature="UiFeatures.EDITING" class="pattern-button"
+                  mat-raised-button color="warn" aria-label="Delete">
+            <i class="material-icons">delete</i>
+          </button>
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-card-footer *ngIf="showLinks">
+            <span [matBadge]="getLinkCount(entity._links.ingoingDirectedEdges)"
+                  class="badge-span"
+                  matBadgeOverlap="false">
+                <mat-icon>trending_flat</mat-icon>
+            </span>
+      <mat-icon class="flip">trending_flat</mat-icon>
+      <span [matBadge]="getLinkCount(entity._links.outgoingDirectedEdges)"
+            class="badge-span"
+            matBadgeOverlap="false">
+            </span>
+      <span [matBadge]="getLinkCount(entity._links.undirectedEdges)" matBadgeOverlap="false">
+                <mat-icon>compare_arrows</mat-icon>
+            </span>
+    </mat-card-footer>
+  </mat-card>
+</div>

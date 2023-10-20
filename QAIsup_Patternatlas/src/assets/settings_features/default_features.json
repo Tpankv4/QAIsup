@@ -1,0 +1,12 @@
+{
+  "features": {
+    "designModel": false,
+    "patternCandidate": true,
+    "patternViews": true,
+    "issue": true,
+    "editing": true,
+    "showSettings": false,
+    "authentication": true,
+    "planqkUi": true
+  }
+}

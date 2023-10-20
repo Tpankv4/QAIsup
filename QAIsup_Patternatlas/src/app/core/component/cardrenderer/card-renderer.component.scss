@@ -1,0 +1,27 @@
+.card {
+  width: 12em;
+  height: 18em;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0.25em;
+}
+
+.mat-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.mat-card-image {
+  object-fit: scale-down;
+}
+
+.mat-card-footer {
+  padding: 16px;
+}
+
+.pattern-button {
+  margin-bottom: 1rem;
+}

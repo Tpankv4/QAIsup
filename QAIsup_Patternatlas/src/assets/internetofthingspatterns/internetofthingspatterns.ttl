@@ -1,0 +1,168 @@
+@prefix : <https://purl.org/patternpedia/internetofthingspatterns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://purl.org/patternpedia/internetofthingspatterns> .
+
+<https://purl.org/patternpedia/internetofthingspatterns> rdf:type owl:Ontology ;
+                                                         owl:imports <https://purl.org/patternpedia> .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://purl.org/patternpedia/internetofthingspatterns#hasSource
+:hasSource rdf:type owl:ObjectProperty ;
+           rdfs:domain :InternetOfThingsPatternRelationDescriptor ;
+           rdfs:range :InternetOfThingsPattern .
+
+
+###  https://purl.org/patternpedia/internetofthingspatterns#hasTarget
+:hasTarget rdf:type owl:ObjectProperty ;
+           rdfs:domain :InternetOfThingsPatternRelationDescriptor ;
+           rdfs:range :InternetOfThingsPattern .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://purl.org/patternpedia/internetofthingspatterns#alias
+:alias rdf:type owl:DatatypeProperty .
+
+
+###  https://purl.org/patternpedia/internetofthingspatterns#benefit
+:benefit rdf:type owl:DatatypeProperty .
+
+
+###  https://purl.org/patternpedia/internetofthingspatterns#context
+:context rdf:type owl:DatatypeProperty .
+
+
+###  https://purl.org/patternpedia/internetofthingspatterns#drawback
+:drawback rdf:type owl:DatatypeProperty .
+
+
+###  https://purl.org/patternpedia/internetofthingspatterns#examples
+:examples rdf:type owl:DatatypeProperty .
+
+
+###  https://purl.org/patternpedia/internetofthingspatterns#force
+:force rdf:type owl:DatatypeProperty .
+
+
+###  https://purl.org/patternpedia/internetofthingspatterns#icon
+:icon rdf:type owl:DatatypeProperty .
+
+
+###  https://purl.org/patternpedia/internetofthingspatterns#intent
+:intent rdf:type owl:DatatypeProperty .
+
+
+###  https://purl.org/patternpedia/internetofthingspatterns#problem
+:problem rdf:type owl:DatatypeProperty .
+
+
+###  https://purl.org/patternpedia/internetofthingspatterns#result
+:result rdf:type owl:DatatypeProperty .
+
+
+###  https://purl.org/patternpedia/internetofthingspatterns#solution
+:solution rdf:type owl:DatatypeProperty .
+
+
+###  https://purl.org/patternpedia/internetofthingspatterns#solutionSketch
+:solutionSketch rdf:type owl:DatatypeProperty .
+
+
+###  https://purl.org/patternpedia/internetofthingspatterns#variant
+:variant rdf:type owl:DatatypeProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://purl.org/patternpedia/internetofthingspatterns#InternetOfThingsPattern
+:InternetOfThingsPattern rdf:type owl:Class ;
+                         rdfs:subClassOf <https://purl.org/patternpedia#Pattern> ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :force ;
+                                           owl:someValuesFrom xsd:string
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :alias ;
+                                           owl:allValuesFrom xsd:string
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :benefit ;
+                                           owl:allValuesFrom xsd:string
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :drawback ;
+                                           owl:allValuesFrom xsd:string
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :solutionSketch ;
+                                           owl:allValuesFrom xsd:anyURI
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :variant ;
+                                           owl:allValuesFrom xsd:string
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty <https://purl.org/patternpedia#hasName> ;
+                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                           owl:onDataRange xsd:string
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :context ;
+                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                           owl:onDataRange xsd:string
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :examples ;
+                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                           owl:onDataRange xsd:string
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :icon ;
+                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                           owl:onDataRange xsd:anyURI
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :intent ;
+                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                           owl:onDataRange xsd:string
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :problem ;
+                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                           owl:onDataRange xsd:string
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :result ;
+                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                           owl:onDataRange xsd:string
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :solution ;
+                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                           owl:onDataRange xsd:string
+                                         ] .
+
+
+###  https://purl.org/patternpedia/internetofthingspatterns#InternetOfThingsPatternRelationDescriptor
+:InternetOfThingsPatternRelationDescriptor rdf:type owl:Class ;
+                                           rdfs:subClassOf <https://purl.org/patternpedia#PatternRelationDescriptor> .
+
+
+###  https://purl.org/patternpedia/internetofthingspatterns#InternetOfThingsPatterns
+:InternetOfThingsPatterns rdf:type owl:NamedIndividual ,
+                                   <https://purl.org/patternpedia#PatternLanguage> ;
+                          <https://purl.org/patternpedia#containsPattern> <https://purl.org/patternpedia/internetofthingspatterns/deviceshadow#DeviceShadow> ,
+                                                                         <https://purl.org/patternpedia/internetofthingspatterns/devicegateway#DeviceGateway> ;
+                          <https://purl.org/patternpedia#hasLogo> "https://media-assets-05.thedrum.com/cache/images/thedrum-prod/s3-news-tmp-112560-internet-of-things--default--300.jpg"^^xsd:anyURI ;
+                          <https://purl.org/patternpedia#hasName> "Internet of Things Patterns"^^xsd:string .

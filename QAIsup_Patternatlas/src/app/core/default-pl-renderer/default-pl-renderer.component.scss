@@ -1,0 +1,27 @@
+.mat-card-content.fixed-height-card-content {
+  height: 12em;
+  overflow: hidden;
+}
+
+.-rotate-90deg {
+  transform: rotate(90deg);
+}
+
+
+#search-field {
+  font-size: medium;
+  margin-left: 0.5em;
+  height: 35px;
+  align-items: center;
+  margin-top: -0.25em;
+}
+
+.algo-selector-class {
+  height: 35px;
+  font-size: medium;
+  margin-left: 0.5em;
+  margin-right: 1em;
+  align-items: center;
+  margin-top: -0.25em;
+  width: 500px;
+}

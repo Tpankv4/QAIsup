@@ -1,0 +1,39 @@
+.container {
+  height: 100%;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 165px auto;
+  row-gap: 10px;
+}
+
+.mat-card {
+  grid-area: 1 / 1 / 1 / 1;
+  min-height: 1rem;
+  // max-height: 160px !important;
+}
+
+.container-input {
+  height: 135px;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 99px 36px;
+}
+
+.wrapper-input {
+  grid-area: 1 / 1 / 1 / 1;
+}
+
+.wrapper-buttons {
+  grid-area: 2 / 1 / 2 / 1;
+}
+
+button {
+  margin-right: 10px;
+}
+
+.container-comment-list {
+  // border: 1px solid red;
+  overflow-y: scroll;
+  grid-area: 2 / 1 / 2 / 1;
+}

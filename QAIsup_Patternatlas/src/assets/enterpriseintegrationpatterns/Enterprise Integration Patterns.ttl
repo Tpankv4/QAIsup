@@ -1,0 +1,207 @@
+# Definition of prefixes
+@prefix : <https://purl.org/patternpedia/enterpriseintegrationpatterns#> .
+@prefix pp: <https://purl.org/patternpedia#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://purl.org/patternpedia/enterpriseintegrationpatterns/> .
+
+# The ontology of the patternlanguage
+<https://purl.org/patternpedia/enterpriseintegrationpatterns>
+    rdf:type owl:Ontology ;
+    owl:imports <https://purl.org/patternpedia> ,
+        <https://purl.org/patternpedia/enterpriseintegrationpatterns/filetransfer> ,
+        <https://purl.org/patternpedia/enterpriseintegrationpatterns/shareddatabase> ,
+        <https://purl.org/patternpedia/enterpriseintegrationpatterns/remoteprocedureinvocation> ,
+        <https://purl.org/patternpedia/enterpriseintegrationpatterns/messaging> ,
+        <https://purl.org/patternpedia/enterpriseintegrationpatterns/messagechannel> ,
+        <https://purl.org/patternpedia/enterpriseintegrationpatterns/message> ,
+        <https://purl.org/patternpedia/enterpriseintegrationpatterns/pipesandfilters> ,
+        <https://purl.org/patternpedia/enterpriseintegrationpatterns/messagerouter> ,
+        <https://purl.org/patternpedia/enterpriseintegrationpatterns/messagetranslator> ,
+        <https://purl.org/patternpedia/enterpriseintegrationpatterns/messageendpoint> ,
+        <https://purl.org/patternpedia/enterpriseintegrationpatterns/point-to-pointchannel> ,
+        <https://purl.org/patternpedia/enterpriseintegrationpatterns/publish-subscribechannel> ,
+        <https://purl.org/patternpedia/enterpriseintegrationpatterns/datatypechannel> ,
+        <https://purl.org/patternpedia/enterpriseintegrationpatterns/invalidmessagechannel> ,
+        <https://purl.org/patternpedia/enterpriseintegrationpatterns/deadletterchannel> ,
+        <https://purl.org/patternpedia/enterpriseintegrationpatterns/guaranteeddelivery> ,
+        <https://purl.org/patternpedia/enterpriseintegrationpatterns/channeladapter> ,
+        <https://purl.org/patternpedia/enterpriseintegrationpatterns/messagingbridge> ,
+        <https://purl.org/patternpedia/enterpriseintegrationpatterns/messagebus> ,
+        <https://purl.org/patternpedia/enterpriseintegrationpatterns/commandmessage> ,
+        <https://purl.org/patternpedia/enterpriseintegrationpatterns/documentmessage> ,
+        <https://purl.org/patternpedia/enterpriseintegrationpatterns/eventmessage> ,
+        <https://purl.org/patternpedia/enterpriseintegrationpatterns/request-reply> ,
+        <https://purl.org/patternpedia/enterpriseintegrationpatterns/returnaddress> ,
+        <https://purl.org/patternpedia/enterpriseintegrationpatterns/correlationidentifier> ,
+        <https://purl.org/patternpedia/enterpriseintegrationpatterns/messagesequence> ,
+        <https://purl.org/patternpedia/enterpriseintegrationpatterns/messageexpiration> ,
+        <https://purl.org/patternpedia/enterpriseintegrationpatterns/formatindicator> ,
+        <https://purl.org/patternpedia/enterpriseintegrationpatterns/content-basedrouter> ,
+        <https://purl.org/patternpedia/enterpriseintegrationpatterns/messagefilter> ,
+        <https://purl.org/patternpedia/enterpriseintegrationpatterns/dynamicrouter> ,
+        <https://purl.org/patternpedia/enterpriseintegrationpatterns/recipientlist> ,
+        <https://purl.org/patternpedia/enterpriseintegrationpatterns/splitter> ,
+        <https://purl.org/patternpedia/enterpriseintegrationpatterns/aggregator> ,
+        <https://purl.org/patternpedia/enterpriseintegrationpatterns/resequencer> ,
+        <https://purl.org/patternpedia/enterpriseintegrationpatterns/composedmessageprocessor> ,
+        <https://purl.org/patternpedia/enterpriseintegrationpatterns/scatter-gather> ,
+        <https://purl.org/patternpedia/enterpriseintegrationpatterns/routingslip> ,
+        <https://purl.org/patternpedia/enterpriseintegrationpatterns/processmanager> ,
+        <https://purl.org/patternpedia/enterpriseintegrationpatterns/messagebroker> ,
+        <https://purl.org/patternpedia/enterpriseintegrationpatterns/envelopewrapper> ,
+        <https://purl.org/patternpedia/enterpriseintegrationpatterns/contentenricher> ,
+        <https://purl.org/patternpedia/enterpriseintegrationpatterns/contentfilter> ,
+        <https://purl.org/patternpedia/enterpriseintegrationpatterns/claimcheck> ,
+        <https://purl.org/patternpedia/enterpriseintegrationpatterns/normalizer> ,
+        <https://purl.org/patternpedia/enterpriseintegrationpatterns/canonicaldatamodel> ,
+        <https://purl.org/patternpedia/enterpriseintegrationpatterns/messaginggateway> ,
+        <https://purl.org/patternpedia/enterpriseintegrationpatterns/messagingmapper> ,
+        <https://purl.org/patternpedia/enterpriseintegrationpatterns/transactionalclient> ,
+        <https://purl.org/patternpedia/enterpriseintegrationpatterns/pollingconsumer> ,
+        <https://purl.org/patternpedia/enterpriseintegrationpatterns/event-drivenconsumer> ,
+        <https://purl.org/patternpedia/enterpriseintegrationpatterns/competingconsumers> ,
+        <https://purl.org/patternpedia/enterpriseintegrationpatterns/messagedispatcher> ,
+        <https://purl.org/patternpedia/enterpriseintegrationpatterns/selectiveconsumer> ,
+        <https://purl.org/patternpedia/enterpriseintegrationpatterns/durablesubscriber> ,
+        <https://purl.org/patternpedia/enterpriseintegrationpatterns/idempotentreceiver> ,
+        <https://purl.org/patternpedia/enterpriseintegrationpatterns/serviceactivator> ,
+        <https://purl.org/patternpedia/enterpriseintegrationpatterns/controlbus> ,
+        <https://purl.org/patternpedia/enterpriseintegrationpatterns/detour> ,
+        <https://purl.org/patternpedia/enterpriseintegrationpatterns/wiretap> ,
+        <https://purl.org/patternpedia/enterpriseintegrationpatterns/messagehistory> ,
+        <https://purl.org/patternpedia/enterpriseintegrationpatterns/messagestore> ,
+        <https://purl.org/patternpedia/enterpriseintegrationpatterns/smartproxy> ,
+        <https://purl.org/patternpedia/enterpriseintegrationpatterns/testmessage> ,
+        <https://purl.org/patternpedia/enterpriseintegrationpatterns/channelpurger> . 
+
+
+# Data Properties
+:hasDescription rdf:type owl:DataProperty .
+:hasPattern rdf:type owl:DataProperty .
+:hasLabel rdf:type owl:DataProperty .
+
+
+# Class definitions
+:EnterpriseIntegrationPattern
+    rdf:type owl:Class ;
+    rdfs:subClassOf pp:Pattern ,
+        [ rdf:type owl:Restriction ;
+          owl:onProperty :hasDescription ;
+          owl:allValuesFrom xsd:string
+        ] .
+
+:EnterpriseIntegrationPatternDirectedRelationDescriptor
+    rdf:type owl:Class ;
+    rdfs:subClassOf pp:PatternRelationDescriptor ,
+        [ rdf:type owl:Restriction ;
+          owl:onProperty :hasDescription ;
+          owl:allValuesFrom xsd:string
+        ] .
+
+:EnterpriseIntegrationPatternUndirectedRelationDescriptor
+    rdf:type owl:Class ;
+    rdfs:subClassOf 
+        [ rdf:type owl:Restriction ;
+          owl:onProperty :hasPattern ;
+          owl:qualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+          owl:onClass pp:Pattern
+        ] ,
+        [ rdf:type owl:Restriction ;
+          owl:onProperty :hasDescription ;
+          owl:allValuesFrom xsd:string
+        ] .
+
+:EnterpriseIntegrationPatternRelationDescriptor
+    rdf:type owl:Class ;
+    rdfs:subClassOf 
+        [ rdf:type owl:Restriction ;
+          owl:onProperty :hasPattern ;
+          owl:onClass pp:Pattern
+        ] ,
+        [ rdf:type owl:Restriction ;
+          owl:onProperty :hasLabel ;
+          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+          owl:onClass xsd:string
+        ] ,
+        [ rdf:type owl:Restriction ;
+          owl:onProperty :hasDescription ;
+          owl:allValuesFrom xsd:string
+        ] .
+
+
+
+# Individuals
+:EnterpriseIntegrationPatterns
+    rdf:type owl:NamedIndividual, pp:PatternLanguage ;
+    pp:hasLogo "https://www.enterpriseintegrationpatterns.com/img/0321200683.gif"^^xsd:anyURI ;
+    pp:hasName "Enterprise Integration Patterns"^^xsd:string ;
+    pp:containsPattern <https://purl.com/patternpedia/enterpriseintegrationpatterns/filetransfer#FileTransfer> ,
+        <https://purl.com/patternpedia/enterpriseintegrationpatterns/shareddatabase#SharedDatabase> ,
+        <https://purl.com/patternpedia/enterpriseintegrationpatterns/remoteprocedureinvocation#RemoteProcedureInvocation> ,
+        <https://purl.com/patternpedia/enterpriseintegrationpatterns/messaging#Messaging> ,
+        <https://purl.com/patternpedia/enterpriseintegrationpatterns/messagechannel#MessageChannel> ,
+        <https://purl.com/patternpedia/enterpriseintegrationpatterns/message#Message> ,
+        <https://purl.com/patternpedia/enterpriseintegrationpatterns/pipesandfilters#PipesandFilters> ,
+        <https://purl.com/patternpedia/enterpriseintegrationpatterns/messagerouter#MessageRouter> ,
+        <https://purl.com/patternpedia/enterpriseintegrationpatterns/messagetranslator#MessageTranslator> ,
+        <https://purl.com/patternpedia/enterpriseintegrationpatterns/messageendpoint#MessageEndpoint> ,
+        <https://purl.com/patternpedia/enterpriseintegrationpatterns/point-to-pointchannel#Point-to-PointChannel> ,
+        <https://purl.com/patternpedia/enterpriseintegrationpatterns/publish-subscribechannel#Publish-SubscribeChannel> ,
+        <https://purl.com/patternpedia/enterpriseintegrationpatterns/datatypechannel#DatatypeChannel> ,
+        <https://purl.com/patternpedia/enterpriseintegrationpatterns/invalidmessagechannel#InvalidMessageChannel> ,
+        <https://purl.com/patternpedia/enterpriseintegrationpatterns/deadletterchannel#DeadLetterChannel> ,
+        <https://purl.com/patternpedia/enterpriseintegrationpatterns/guaranteeddelivery#GuaranteedDelivery> ,
+        <https://purl.com/patternpedia/enterpriseintegrationpatterns/channeladapter#ChannelAdapter> ,
+        <https://purl.com/patternpedia/enterpriseintegrationpatterns/messagingbridge#MessagingBridge> ,
+        <https://purl.com/patternpedia/enterpriseintegrationpatterns/messagebus#MessageBus> ,
+        <https://purl.com/patternpedia/enterpriseintegrationpatterns/commandmessage#CommandMessage> ,
+        <https://purl.com/patternpedia/enterpriseintegrationpatterns/documentmessage#DocumentMessage> ,
+        <https://purl.com/patternpedia/enterpriseintegrationpatterns/eventmessage#EventMessage> ,
+        <https://purl.com/patternpedia/enterpriseintegrationpatterns/request-reply#Request-Reply> ,
+        <https://purl.com/patternpedia/enterpriseintegrationpatterns/returnaddress#ReturnAddress> ,
+        <https://purl.com/patternpedia/enterpriseintegrationpatterns/correlationidentifier#CorrelationIdentifier> ,
+        <https://purl.com/patternpedia/enterpriseintegrationpatterns/messagesequence#MessageSequence> ,
+        <https://purl.com/patternpedia/enterpriseintegrationpatterns/messageexpiration#MessageExpiration> ,
+        <https://purl.com/patternpedia/enterpriseintegrationpatterns/formatindicator#FormatIndicator> ,
+        <https://purl.com/patternpedia/enterpriseintegrationpatterns/content-basedrouter#Content-BasedRouter> ,
+        <https://purl.com/patternpedia/enterpriseintegrationpatterns/messagefilter#MessageFilter> ,
+        <https://purl.com/patternpedia/enterpriseintegrationpatterns/dynamicrouter#DynamicRouter> ,
+        <https://purl.com/patternpedia/enterpriseintegrationpatterns/recipientlist#RecipientList> ,
+        <https://purl.com/patternpedia/enterpriseintegrationpatterns/splitter#Splitter> ,
+        <https://purl.com/patternpedia/enterpriseintegrationpatterns/aggregator#Aggregator> ,
+        <https://purl.com/patternpedia/enterpriseintegrationpatterns/resequencer#Resequencer> ,
+        <https://purl.com/patternpedia/enterpriseintegrationpatterns/composedmessageprocessor#ComposedMessageProcessor> ,
+        <https://purl.com/patternpedia/enterpriseintegrationpatterns/scatter-gather#Scatter-Gather> ,
+        <https://purl.com/patternpedia/enterpriseintegrationpatterns/routingslip#RoutingSlip> ,
+        <https://purl.com/patternpedia/enterpriseintegrationpatterns/processmanager#ProcessManager> ,
+        <https://purl.com/patternpedia/enterpriseintegrationpatterns/messagebroker#MessageBroker> ,
+        <https://purl.com/patternpedia/enterpriseintegrationpatterns/envelopewrapper#EnvelopeWrapper> ,
+        <https://purl.com/patternpedia/enterpriseintegrationpatterns/contentenricher#ContentEnricher> ,
+        <https://purl.com/patternpedia/enterpriseintegrationpatterns/contentfilter#ContentFilter> ,
+        <https://purl.com/patternpedia/enterpriseintegrationpatterns/claimcheck#ClaimCheck> ,
+        <https://purl.com/patternpedia/enterpriseintegrationpatterns/normalizer#Normalizer> ,
+        <https://purl.com/patternpedia/enterpriseintegrationpatterns/canonicaldatamodel#CanonicalDataModel> ,
+        <https://purl.com/patternpedia/enterpriseintegrationpatterns/messaginggateway#MessagingGateway> ,
+        <https://purl.com/patternpedia/enterpriseintegrationpatterns/messagingmapper#MessagingMapper> ,
+        <https://purl.com/patternpedia/enterpriseintegrationpatterns/transactionalclient#TransactionalClient> ,
+        <https://purl.com/patternpedia/enterpriseintegrationpatterns/pollingconsumer#PollingConsumer> ,
+        <https://purl.com/patternpedia/enterpriseintegrationpatterns/event-drivenconsumer#Event-DrivenConsumer> ,
+        <https://purl.com/patternpedia/enterpriseintegrationpatterns/competingconsumers#CompetingConsumers> ,
+        <https://purl.com/patternpedia/enterpriseintegrationpatterns/messagedispatcher#MessageDispatcher> ,
+        <https://purl.com/patternpedia/enterpriseintegrationpatterns/selectiveconsumer#SelectiveConsumer> ,
+        <https://purl.com/patternpedia/enterpriseintegrationpatterns/durablesubscriber#DurableSubscriber> ,
+        <https://purl.com/patternpedia/enterpriseintegrationpatterns/idempotentreceiver#IdempotentReceiver> ,
+        <https://purl.com/patternpedia/enterpriseintegrationpatterns/serviceactivator#ServiceActivator> ,
+        <https://purl.com/patternpedia/enterpriseintegrationpatterns/controlbus#ControlBus> ,
+        <https://purl.com/patternpedia/enterpriseintegrationpatterns/detour#Detour> ,
+        <https://purl.com/patternpedia/enterpriseintegrationpatterns/wiretap#WireTap> ,
+        <https://purl.com/patternpedia/enterpriseintegrationpatterns/messagehistory#MessageHistory> ,
+        <https://purl.com/patternpedia/enterpriseintegrationpatterns/messagestore#MessageStore> ,
+        <https://purl.com/patternpedia/enterpriseintegrationpatterns/smartproxy#SmartProxy> ,
+        <https://purl.com/patternpedia/enterpriseintegrationpatterns/testmessage#TestMessage> ,
+        <https://purl.com/patternpedia/enterpriseintegrationpatterns/channelpurger#ChannelPurger> .
+

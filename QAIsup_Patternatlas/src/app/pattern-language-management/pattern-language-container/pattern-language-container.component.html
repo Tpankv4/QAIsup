@@ -1,0 +1,33 @@
+<!--
+  ~ Copyright (c) 2018 University of Stuttgart.
+  ~
+  ~ See the NOTICE file(s) distributed with this work for additional
+  ~ information regarding copyright ownership.
+  ~
+  ~ This program and the accompanying materials are made available under the
+  ~ terms of the Eclipse Public License 2.0 which is available at
+  ~ http://www.eclipse.org/legal/epl-2.0, or the Apache Software License 2.0
+  ~ which is available at https://www.apache.org/licenses/LICENSE-2.0.
+  ~
+  ~ SPDX-License-Identifier: EPL-2.0 OR Apache-2.0
+  -->
+
+<!-- tab view if there are multiple renderers for the language available -->
+<mat-tab-group *ngIf="renderer && renderer.length > 1; else oneOrNoRenderer">
+  <!-- create a new tab for each available renderer -->
+  <mat-tab label="{{r.label || 'Tab ' + (i+1)}}" *ngFor="let r of renderer; let i = index">
+    <mat-card>
+      <ng-template ppPatternLanguageContainer [patternLanguageId]="plEncodedId" [index]="i"></ng-template>
+    </mat-card>
+  </mat-tab>
+</mat-tab-group>
+
+<!-- else, use default renderers -->
+<ng-template #oneOrNoRenderer>
+  <!--If there is only one renderer registered for this pl, use it: -->
+  <ng-template *ngIf="renderer" ppPatternLanguageContainer [patternLanguageId]="plEncodedId"></ng-template>
+
+  <!--If there is no renderer registered for this pl, take the default one -->
+  <ng-template *ngIf="!renderer" #cardsView ppPatternLanguageContainer [patternLanguageId]="plEncodedId">
+  </ng-template>
+</ng-template>

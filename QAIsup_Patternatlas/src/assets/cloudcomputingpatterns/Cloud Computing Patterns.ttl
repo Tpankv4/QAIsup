@@ -1,0 +1,225 @@
+# Definition of prefixes
+@prefix : <https://purl.org/patternpedia/cloudcomputingpatterns#> .
+@prefix pp: <https://purl.org/patternpedia#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://purl.org/patternpedia/cloudcomputingpatterns/> .
+
+# The ontology of the patternlanguage
+<https://purl.org/patternpedia/cloudcomputingpatterns>
+    rdf:type owl:Ontology ;
+    owl:imports <https://purl.org/patternpedia> ,
+        <https://purl.org/patternpedia/cloudcomputingpatterns/staticworkload> ,
+        <https://purl.org/patternpedia/cloudcomputingpatterns/periodicworkload> ,
+        <https://purl.org/patternpedia/cloudcomputingpatterns/once-in-a-lifetimeworkload> ,
+        <https://purl.org/patternpedia/cloudcomputingpatterns/unpredictableworkload> ,
+        <https://purl.org/patternpedia/cloudcomputingpatterns/continuouslychangingworkload> ,
+        <https://purl.org/patternpedia/cloudcomputingpatterns/infrastructureasaservice%28iaas%29> ,
+        <https://purl.org/patternpedia/cloudcomputingpatterns/platformasaservice%28paas%29> ,
+        <https://purl.org/patternpedia/cloudcomputingpatterns/softwareasaservice%28saas%29> ,
+        <https://purl.org/patternpedia/cloudcomputingpatterns/publiccloud> ,
+        <https://purl.org/patternpedia/cloudcomputingpatterns/privatecloud> ,
+        <https://purl.org/patternpedia/cloudcomputingpatterns/communitycloud> ,
+        <https://purl.org/patternpedia/cloudcomputingpatterns/hybridcloud> ,
+        <https://purl.org/patternpedia/cloudcomputingpatterns/elasticinfrastructure> ,
+        <https://purl.org/patternpedia/cloudcomputingpatterns/elasticplatform> ,
+        <https://purl.org/patternpedia/cloudcomputingpatterns/node-basedavailability> ,
+        <https://purl.org/patternpedia/cloudcomputingpatterns/environment-basedavailability> ,
+        <https://purl.org/patternpedia/cloudcomputingpatterns/hypervisor> ,
+        <https://purl.org/patternpedia/cloudcomputingpatterns/executionenvironment> ,
+        <https://purl.org/patternpedia/cloudcomputingpatterns/mapreduce> ,
+        <https://purl.org/patternpedia/cloudcomputingpatterns/blockstorage> ,
+        <https://purl.org/patternpedia/cloudcomputingpatterns/blobstorage> ,
+        <https://purl.org/patternpedia/cloudcomputingpatterns/relationaldatabase> ,
+        <https://purl.org/patternpedia/cloudcomputingpatterns/key-valuestorage> ,
+        <https://purl.org/patternpedia/cloudcomputingpatterns/strictconsistency> ,
+        <https://purl.org/patternpedia/cloudcomputingpatterns/eventualconsistency> ,
+        <https://purl.org/patternpedia/cloudcomputingpatterns/virtualnetworking> ,
+        <https://purl.org/patternpedia/cloudcomputingpatterns/message-orientedmiddleware> ,
+        <https://purl.org/patternpedia/cloudcomputingpatterns/exactly-oncedelivery> ,
+        <https://purl.org/patternpedia/cloudcomputingpatterns/at-least-oncedelivery> ,
+        <https://purl.org/patternpedia/cloudcomputingpatterns/transaction-baseddelivery> ,
+        <https://purl.org/patternpedia/cloudcomputingpatterns/timeout-baseddelivery> ,
+        <https://purl.org/patternpedia/cloudcomputingpatterns/loosecoupling> ,
+        <https://purl.org/patternpedia/cloudcomputingpatterns/distributedapplication> ,
+        <https://purl.org/patternpedia/cloudcomputingpatterns/statefulcomponent> ,
+        <https://purl.org/patternpedia/cloudcomputingpatterns/statelesscomponent> ,
+        <https://purl.org/patternpedia/cloudcomputingpatterns/userinterfacecomponent> ,
+        <https://purl.org/patternpedia/cloudcomputingpatterns/processingcomponent> ,
+        <https://purl.org/patternpedia/cloudcomputingpatterns/batchprocessingcomponent> ,
+        <https://purl.org/patternpedia/cloudcomputingpatterns/dataaccesscomponent> ,
+        <https://purl.org/patternpedia/cloudcomputingpatterns/dataabstractor> ,
+        <https://purl.org/patternpedia/cloudcomputingpatterns/idempotentprocessor> ,
+        <https://purl.org/patternpedia/cloudcomputingpatterns/transaction-basedprocessor> ,
+        <https://purl.org/patternpedia/cloudcomputingpatterns/timeout-basedmessageprocessor> ,
+        <https://purl.org/patternpedia/cloudcomputingpatterns/multi-componentimage> ,
+        <https://purl.org/patternpedia/cloudcomputingpatterns/sharedcomponent> ,
+        <https://purl.org/patternpedia/cloudcomputingpatterns/tenant-isolatedcomponent> ,
+        <https://purl.org/patternpedia/cloudcomputingpatterns/dedicatedcomponent> ,
+        <https://purl.org/patternpedia/cloudcomputingpatterns/restricteddataaccesscomponent> ,
+        <https://purl.org/patternpedia/cloudcomputingpatterns/messagemover> ,
+        <https://purl.org/patternpedia/cloudcomputingpatterns/applicationcomponentproxy> ,
+        <https://purl.org/patternpedia/cloudcomputingpatterns/compliantdatareplication> ,
+        <https://purl.org/patternpedia/cloudcomputingpatterns/integrationprovider> ,
+        <https://purl.org/patternpedia/cloudcomputingpatterns/provideradapter> ,
+        <https://purl.org/patternpedia/cloudcomputingpatterns/managedconfiguration> ,
+        <https://purl.org/patternpedia/cloudcomputingpatterns/elasticitymanager> ,
+        <https://purl.org/patternpedia/cloudcomputingpatterns/elasticloadbalancer> ,
+        <https://purl.org/patternpedia/cloudcomputingpatterns/elasticqueue> ,
+        <https://purl.org/patternpedia/cloudcomputingpatterns/watchdog> ,
+        <https://purl.org/patternpedia/cloudcomputingpatterns/elasticitymanagementprocess> ,
+        <https://purl.org/patternpedia/cloudcomputingpatterns/featureflagmanagementprocess> ,
+        <https://purl.org/patternpedia/cloudcomputingpatterns/updatetransitionprocess> ,
+        <https://purl.org/patternpedia/cloudcomputingpatterns/standbypoolingprocess> ,
+        <https://purl.org/patternpedia/cloudcomputingpatterns/resiliencymanagementprocess> ,
+        <https://purl.org/patternpedia/cloudcomputingpatterns/two-tiercloudapplication> ,
+        <https://purl.org/patternpedia/cloudcomputingpatterns/three-tiercloudapplication> ,
+        <https://purl.org/patternpedia/cloudcomputingpatterns/contentdistributionnetwork> ,
+        <https://purl.org/patternpedia/cloudcomputingpatterns/hybriduserinterface> ,
+        <https://purl.org/patternpedia/cloudcomputingpatterns/hybridprocessing> ,
+        <https://purl.org/patternpedia/cloudcomputingpatterns/hybriddata> ,
+        <https://purl.org/patternpedia/cloudcomputingpatterns/hybridbackup> ,
+        <https://purl.org/patternpedia/cloudcomputingpatterns/hybridbackend> ,
+        <https://purl.org/patternpedia/cloudcomputingpatterns/hybridapplicationfunctions> ,
+        <https://purl.org/patternpedia/cloudcomputingpatterns/hybridmultimediawebapplication> ,
+        <https://purl.org/patternpedia/cloudcomputingpatterns/hybriddevelopmentenvironment> . 
+
+
+# Data Properties
+:hasDescription rdf:type owl:DataProperty .
+:hasPattern rdf:type owl:DataProperty .
+:hasLabel rdf:type owl:DataProperty .
+
+
+# Class definitions
+:CloudComputingPattern
+    rdf:type owl:Class ;
+    rdfs:subClassOf pp:Pattern ,
+        [ rdf:type owl:Restriction ;
+          owl:onProperty :hasDescription ;
+          owl:allValuesFrom xsd:string
+        ] .
+
+:CloudComputingPatternDirectedRelationDescriptor
+    rdf:type owl:Class ;
+    rdfs:subClassOf pp:PatternRelationDescriptor ,
+        [ rdf:type owl:Restriction ;
+          owl:onProperty :hasDescription ;
+          owl:allValuesFrom xsd:string
+        ] .
+
+:CloudComputingPatternUndirectedRelationDescriptor
+    rdf:type owl:Class ;
+    rdfs:subClassOf 
+        [ rdf:type owl:Restriction ;
+          owl:onProperty :hasPattern ;
+          owl:qualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+          owl:onClass pp:Pattern
+        ] ,
+        [ rdf:type owl:Restriction ;
+          owl:onProperty :hasDescription ;
+          owl:allValuesFrom xsd:string
+        ] .
+
+:CloudComputingPatternRelationDescriptor
+    rdf:type owl:Class ;
+    rdfs:subClassOf 
+        [ rdf:type owl:Restriction ;
+          owl:onProperty :hasPattern ;
+          owl:onClass pp:Pattern
+        ] ,
+        [ rdf:type owl:Restriction ;
+          owl:onProperty :hasLabel ;
+          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+          owl:onClass xsd:string
+        ] ,
+        [ rdf:type owl:Restriction ;
+          owl:onProperty :hasDescription ;
+          owl:allValuesFrom xsd:string
+        ] .
+
+
+
+# Individuals
+:CloudComputingPatterns
+    rdf:type owl:NamedIndividual, pp:PatternLanguage ;
+    pp:hasLogo "https://www.cloudcomputingpatterns.org/img/book.png"^^xsd:anyURI ;
+    pp:hasName "Cloud Computing Patterns"^^xsd:string ;
+    pp:containsPattern <https://purl.com/patternpedia/cloudcomputingpatterns/staticworkload#StaticWorkload> ,
+        <https://purl.com/patternpedia/cloudcomputingpatterns/periodicworkload#PeriodicWorkload> ,
+        <https://purl.com/patternpedia/cloudcomputingpatterns/once-in-a-lifetimeworkload#Once-in-a-lifetimeWorkload> ,
+        <https://purl.com/patternpedia/cloudcomputingpatterns/unpredictableworkload#UnpredictableWorkload> ,
+        <https://purl.com/patternpedia/cloudcomputingpatterns/continuouslychangingworkload#ContinuouslyChangingWorkload> ,
+        <https://purl.com/patternpedia/cloudcomputingpatterns/infrastructureasaservice%28iaas%29#InfrastructureasaService%28IaaS%29> ,
+        <https://purl.com/patternpedia/cloudcomputingpatterns/platformasaservice%28paas%29#PlatformasaService%28PaaS%29> ,
+        <https://purl.com/patternpedia/cloudcomputingpatterns/softwareasaservice%28saas%29#SoftwareasaService%28SaaS%29> ,
+        <https://purl.com/patternpedia/cloudcomputingpatterns/publiccloud#PublicCloud> ,
+        <https://purl.com/patternpedia/cloudcomputingpatterns/privatecloud#PrivateCloud> ,
+        <https://purl.com/patternpedia/cloudcomputingpatterns/communitycloud#CommunityCloud> ,
+        <https://purl.com/patternpedia/cloudcomputingpatterns/hybridcloud#HybridCloud> ,
+        <https://purl.com/patternpedia/cloudcomputingpatterns/elasticinfrastructure#ElasticInfrastructure> ,
+        <https://purl.com/patternpedia/cloudcomputingpatterns/elasticplatform#ElasticPlatform> ,
+        <https://purl.com/patternpedia/cloudcomputingpatterns/node-basedavailability#Node-basedAvailability> ,
+        <https://purl.com/patternpedia/cloudcomputingpatterns/environment-basedavailability#Environment-basedAvailability> ,
+        <https://purl.com/patternpedia/cloudcomputingpatterns/hypervisor#Hypervisor> ,
+        <https://purl.com/patternpedia/cloudcomputingpatterns/executionenvironment#ExecutionEnvironment> ,
+        <https://purl.com/patternpedia/cloudcomputingpatterns/mapreduce#MapReduce> ,
+        <https://purl.com/patternpedia/cloudcomputingpatterns/blockstorage#BlockStorage> ,
+        <https://purl.com/patternpedia/cloudcomputingpatterns/blobstorage#BlobStorage> ,
+        <https://purl.com/patternpedia/cloudcomputingpatterns/relationaldatabase#RelationalDatabase> ,
+        <https://purl.com/patternpedia/cloudcomputingpatterns/key-valuestorage#Key-ValueStorage> ,
+        <https://purl.com/patternpedia/cloudcomputingpatterns/strictconsistency#StrictConsistency> ,
+        <https://purl.com/patternpedia/cloudcomputingpatterns/eventualconsistency#EventualConsistency> ,
+        <https://purl.com/patternpedia/cloudcomputingpatterns/virtualnetworking#VirtualNetworking> ,
+        <https://purl.com/patternpedia/cloudcomputingpatterns/message-orientedmiddleware#Message-orientedMiddleware> ,
+        <https://purl.com/patternpedia/cloudcomputingpatterns/exactly-oncedelivery#Exactly-onceDelivery> ,
+        <https://purl.com/patternpedia/cloudcomputingpatterns/at-least-oncedelivery#At-least-onceDelivery> ,
+        <https://purl.com/patternpedia/cloudcomputingpatterns/transaction-baseddelivery#Transaction-basedDelivery> ,
+        <https://purl.com/patternpedia/cloudcomputingpatterns/timeout-baseddelivery#Timeout-basedDelivery> ,
+        <https://purl.com/patternpedia/cloudcomputingpatterns/loosecoupling#LooseCoupling> ,
+        <https://purl.com/patternpedia/cloudcomputingpatterns/distributedapplication#DistributedApplication> ,
+        <https://purl.com/patternpedia/cloudcomputingpatterns/statefulcomponent#StatefulComponent> ,
+        <https://purl.com/patternpedia/cloudcomputingpatterns/statelesscomponent#StatelessComponent> ,
+        <https://purl.com/patternpedia/cloudcomputingpatterns/userinterfacecomponent#UserInterfaceComponent> ,
+        <https://purl.com/patternpedia/cloudcomputingpatterns/processingcomponent#ProcessingComponent> ,
+        <https://purl.com/patternpedia/cloudcomputingpatterns/batchprocessingcomponent#BatchProcessingComponent> ,
+        <https://purl.com/patternpedia/cloudcomputingpatterns/dataaccesscomponent#DataAccessComponent> ,
+        <https://purl.com/patternpedia/cloudcomputingpatterns/dataabstractor#DataAbstractor> ,
+        <https://purl.com/patternpedia/cloudcomputingpatterns/idempotentprocessor#IdempotentProcessor> ,
+        <https://purl.com/patternpedia/cloudcomputingpatterns/transaction-basedprocessor#Transaction-basedProcessor> ,
+        <https://purl.com/patternpedia/cloudcomputingpatterns/timeout-basedmessageprocessor#Timeout-basedMessageProcessor> ,
+        <https://purl.com/patternpedia/cloudcomputingpatterns/multi-componentimage#Multi-ComponentImage> ,
+        <https://purl.com/patternpedia/cloudcomputingpatterns/sharedcomponent#SharedComponent> ,
+        <https://purl.com/patternpedia/cloudcomputingpatterns/tenant-isolatedcomponent#Tenant-isolatedComponent> ,
+        <https://purl.com/patternpedia/cloudcomputingpatterns/dedicatedcomponent#DedicatedComponent> ,
+        <https://purl.com/patternpedia/cloudcomputingpatterns/restricteddataaccesscomponent#RestrictedDataAccessComponent> ,
+        <https://purl.com/patternpedia/cloudcomputingpatterns/messagemover#MessageMover> ,
+        <https://purl.com/patternpedia/cloudcomputingpatterns/applicationcomponentproxy#ApplicationComponentProxy> ,
+        <https://purl.com/patternpedia/cloudcomputingpatterns/compliantdatareplication#CompliantDataReplication> ,
+        <https://purl.com/patternpedia/cloudcomputingpatterns/integrationprovider#IntegrationProvider> ,
+        <https://purl.com/patternpedia/cloudcomputingpatterns/provideradapter#ProviderAdapter> ,
+        <https://purl.com/patternpedia/cloudcomputingpatterns/managedconfiguration#ManagedConfiguration> ,
+        <https://purl.com/patternpedia/cloudcomputingpatterns/elasticitymanager#ElasticityManager> ,
+        <https://purl.com/patternpedia/cloudcomputingpatterns/elasticloadbalancer#ElasticLoadBalancer> ,
+        <https://purl.com/patternpedia/cloudcomputingpatterns/elasticqueue#ElasticQueue> ,
+        <https://purl.com/patternpedia/cloudcomputingpatterns/watchdog#Watchdog> ,
+        <https://purl.com/patternpedia/cloudcomputingpatterns/elasticitymanagementprocess#ElasticityManagementProcess> ,
+        <https://purl.com/patternpedia/cloudcomputingpatterns/featureflagmanagementprocess#FeatureFlagManagementProcess> ,
+        <https://purl.com/patternpedia/cloudcomputingpatterns/updatetransitionprocess#UpdateTransitionProcess> ,
+        <https://purl.com/patternpedia/cloudcomputingpatterns/standbypoolingprocess#StandbyPoolingProcess> ,
+        <https://purl.com/patternpedia/cloudcomputingpatterns/resiliencymanagementprocess#ResiliencyManagementProcess> ,
+        <https://purl.com/patternpedia/cloudcomputingpatterns/two-tiercloudapplication#Two-TierCloudApplication> ,
+        <https://purl.com/patternpedia/cloudcomputingpatterns/three-tiercloudapplication#Three-TierCloudApplication> ,
+        <https://purl.com/patternpedia/cloudcomputingpatterns/contentdistributionnetwork#ContentDistributionNetwork> ,
+        <https://purl.com/patternpedia/cloudcomputingpatterns/hybriduserinterface#HybridUserInterface> ,
+        <https://purl.com/patternpedia/cloudcomputingpatterns/hybridprocessing#HybridProcessing> ,
+        <https://purl.com/patternpedia/cloudcomputingpatterns/hybriddata#HybridData> ,
+        <https://purl.com/patternpedia/cloudcomputingpatterns/hybridbackup#HybridBackup> ,
+        <https://purl.com/patternpedia/cloudcomputingpatterns/hybridbackend#HybridBackend> ,
+        <https://purl.com/patternpedia/cloudcomputingpatterns/hybridapplicationfunctions#HybridApplicationFunctions> ,
+        <https://purl.com/patternpedia/cloudcomputingpatterns/hybridmultimediawebapplication#HybridMultimediaWebApplication> ,
+        <https://purl.com/patternpedia/cloudcomputingpatterns/hybriddevelopmentenvironment#HybridDevelopmentEnvironment> .
+

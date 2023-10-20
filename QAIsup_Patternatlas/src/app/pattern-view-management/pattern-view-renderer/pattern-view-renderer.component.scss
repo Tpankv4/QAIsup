@@ -1,0 +1,20 @@
+.pattern-card {
+  min-height: 11em;
+  min-width: 13em;
+  width: 13em;
+  margin: 0.25em;
+
+  .mat-card-image {
+    object-fit: scale-down;
+  }
+}
+
+
+.container {
+  display: flex;
+}
+
+.edge-button {
+  width: 4em !important;
+  min-width: unset !important;
+}

@@ -1,0 +1,392 @@
+/*!
+ * Copyright (c) 2018 University of Stuttgart.
+ *
+ * See the NOTICE file(s) distributed with this work for additional
+ * information regarding copyright ownership.
+ *
+ * This program and the accompanying materials are made available under the
+ * terms of the Eclipse Public License 2.0 which is available at
+ * http://www.eclipse.org/legal/epl-2.0, or the Apache Software License 2.0
+ * which is available at https://www.apache.org/licenses/LICENSE-2.0.
+ *
+ * SPDX-License-Identifier: EPL-2.0 OR Apache-2.0
+ */
+/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+@import '~angular2-toaster/toaster';
+@import '~@angular/material/theming';
+
+@include mat-core();
+
+/* PlanQK Red based on #E12D32 */
+
+$planqkred: (
+  50 : #fbe6e6,
+  100 : #f6c0c2,
+  200 : #f09699,
+  300 : #ea6c70,
+  400 : #e64d51,
+  500 : #e12d32,
+  600 : #dd282d,
+  700 : #d92226,
+  800 : #d51c1f,
+  900 : #cd1113,
+  A100 : #fffbfb,
+  A200 : #ffc8c8,
+  A400 : #ff9596,
+  A700 : #ff7b7d,
+  contrast: (
+    50 : #000,
+    100 : #000,
+    200 : #000,
+    300 : #000,
+    400 : #fff,
+    500 : #fff,
+    600 : #fff,
+    700 : #fff,
+    800 : #fff,
+    900 : #fff,
+    A100 : #000,
+    A200 : #000,
+    A400 : #000,
+    A700 : #000,
+  )
+);
+
+/* PlanQK blue based on #3D78B5 */
+
+$planqkblue: (
+  50 : #e8eff6,
+  100 : #c5d7e9,
+  200 : #9ebcda,
+  300 : #77a1cb,
+  400 : #5a8cc0,
+  500 : #3d78b5,
+  600 : #3770ae,
+  700 : #2f65a5,
+  800 : #275b9d,
+  900 : #1a488d,
+  A100 : #c5daff,
+  A200 : #92baff,
+  A400 : #5f9aff,
+  A700 : #468aff,
+  contrast: (
+    50 : #000,
+    100 : #000,
+    200 : #000,
+    300 : #000,
+    400 : #000,
+    500 : #fff,
+    600 : #fff,
+    700 : #fff,
+    800 : #fff,
+    900 : #fff,
+    A100 : #000,
+    A200 : #000,
+    A400 : #000,
+    A700 : #000,
+  )
+);
+
+$planqk-palette-primary: mat-palette($planqkblue);
+$planqk-palette-accent: mat-palette($planqkred);
+
+$planqk-theme: mat-light-theme($planqk-palette-primary, $planqk-palette-accent);
+
+@include angular-material-theme($planqk-theme);
+
+
+body {
+  font-family: sans-serif;
+  margin: 0;
+  background-color: rgb(255, 255, 255);
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px; /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
+/* Rules for sizing the icon. */
+.material-icons.md-18 {
+  font-size: 18px;
+}
+
+.material-icons.md-24 {
+  font-size: 24px;
+}
+
+.material-icons.md-36 {
+  font-size: 36px;
+}
+
+.material-icons.md-48 {
+  font-size: 48px;
+}
+
+/* Rules for using icons as black on a light background. */
+.material-icons.md-dark {
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.material-icons.md-dark.md-inactive {
+  color: rgba(0, 0, 0, 0.26);
+}
+
+/* Rules for using icons as white on a dark background. */
+.material-icons.md-light {
+  color: rgba(255, 255, 255, 1);
+}
+
+.material-icons.md-light.md-inactive {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.landing-card {
+  width: 12rem;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  height: 100%;
+}
+
+.quadratic-card {
+  height: 12rem;
+  width: 12rem;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 8px;
+}
+
+.center-content {
+  /* stylelint-disable value-no-vendor-prefix */
+  display: flex !important;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  /* stylelint-enable value-no-vendor-prefix */
+  justify-content: center;
+  align-items: center;
+}
+
+.preview-tile > figure {
+  align-items: flex-start !important;
+}
+
+.mat-card {
+  border-top: 1px solid rgba(0, 0, 0, 0.14);
+  min-height: 18rem;
+  min-width: 10rem;
+  word-break: break-all;
+}
+
+.mat-card-actions {
+  height: unset;
+  margin-bottom: unset;
+}
+
+.mat-card-image {
+  object-fit: cover;
+  height: 10rem;
+}
+
+.mat-card-title {
+  font-size: 18px;
+  min-height: 3rem;
+  word-break: break-word;
+}
+
+.add-card {
+  color: #3f51b5;
+
+  max-height: 21em;
+
+  &:hover {
+    background-color: #d3d3d3;
+    cursor: pointer;
+  }
+}
+
+.mat-form-field-appearance-outline .mat-form-field-infix {
+  padding: 0.25em 0;
+  width: 6em;
+}
+
+.mat-radio-group {
+  margin-left: 0.25em;
+}
+
+.ignore-css {
+  all: initial !important;
+}
+
+.flip {
+
+  transform: rotate(180deg);
+
+  .mat-badge {
+    transform: rotate(0deg);
+  }
+}
+
+.flip-horizontal {
+  transform: rotate(90deg);
+}
+
+// hide the ink bar that shows that a tab is selected because we want to mimic a toggle-button
+.view-toggle .mat-ink-bar {
+  visibility: hidden !important;
+}
+
+// style the selected tab as 'focused'
+.view-toggle .mat-tab-label-active {
+  opacity: 1 !important;
+}
+
+.view-toggle .mat-tab-label {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  opacity: 0.5;
+  border: solid #3f51b5 1px;
+}
+
+.section-card {
+  min-height: unset;
+  margin: 1em 3em;
+  box-shadow: none;
+  border: #7f7f7f 1px solid;
+}
+
+.box {
+  min-height: 10rem;
+  min-width: 10rem;
+  height: 10rem;
+  width: 10rem;
+  margin: 0.25em;
+}
+
+.badge-span {
+  margin-right: 2em;
+}
+
+.badge-container {
+  float: left;
+}
+
+.cdk-overlay-pane.delete-relation-dialog {
+  position: relative !important;
+}
+
+.close.mat-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 5px;
+  line-height: 14px;
+  font-size: 20px;
+  min-width: auto;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-outline {
+  background-color: #fff;
+}
+
+.mat-form-field {
+  width: 100%;
+}
+
+.horiz-centered {
+  display: inline-flex;
+  align-items: center;
+}
+
+.horiz-aligned {
+  display: flex;
+  justify-content: space-around;
+}
+
+.action-button-with-margin {
+  margin-right: 10px !important;
+}
+
+$break-small: 759px;
+$break-large: 760px;
+
+.container-double {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.left {
+  margin: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  
+  @media screen and (max-width: $break-small) {
+    width: 100%;
+  }
+  @media screen and (min-width: $break-large) {
+    max-width: 60%;
+    flex: 2 350px;
+  }
+}
+
+.right {
+  margin: 8px;
+  @media screen and (max-width: $break-small) {
+    width: 100%;
+  }
+  @media screen and (min-width: $break-large) {
+    max-width: 500px;
+    flex: 1 350px;
+  }
+}
+
+.scrollable-double {
+  @media screen and (max-width: $break-small) {
+    height: 100%;
+  }
+  @media screen and (min-width: $break-large) {
+    // border: 1px solid red;
+    min-height: 500px;
+    height: calc(100vh -  64px - 48px - 64px);
+  }
+}
+
+.detail-component {
+  height: 100%;
+  width: 100%;
+  padding: 4px 0;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}

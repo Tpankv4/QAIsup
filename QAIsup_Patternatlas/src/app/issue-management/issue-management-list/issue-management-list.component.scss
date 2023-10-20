@@ -1,0 +1,37 @@
+.issue-list {
+  overflow-y: scroll;
+}
+
+.h3 {
+  max-width: 50%;
+}
+
+.spacer {
+  width: 16px;
+  height: 100%;
+}
+
+.mat-expansion-panel-header-description {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.panel-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  // border: groove;
+  width: 95%;
+  min-height: fit-content;
+
+  .description {
+    flex: 1;
+    height: 100%;
+    width: 100%;
+  }
+
+  .container-rating {
+    width: 70px;
+  }
+}
