@@ -13,13 +13,11 @@ module.exports = function(textinput) {
 			model: "gpt-3.5-turbo",
 			messages: [{role: "user", content: input}],
 			});
-			console.log("das hier muss gehen!");
-			console.log(completion.choices[0].message);
+			
 			return completion;
 		}
 		catch(error){
 			console.error(error);
-			console.log("fehler... wahrscheinlich kein api key");
 		}
 	}
 	

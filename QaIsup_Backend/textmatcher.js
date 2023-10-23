@@ -9,21 +9,26 @@ module.exports = function(data, isRake, useOpenAI) {
 		return openai("Can you rephrase the following sentence without negations: " + data.input).then((resolve) => {
 			console.log("resolve");
 			console.log(resolve);
-			return matching(data, isRake, resolve.choices[0].message.content);
+			return matching(data, isRake, resolve.choices[0].message.content, useOpenAI);
 		});
 	
 	}else{
-		return matching(data, isRake, data.input);
+		return matching(data, isRake, data.input, useOpenAI);
 	}
 	
 }
 	
-	function matching(data, isRake, resultvalue){
+	function matching(data, isRake, resultvalue, isRephrased){
 		
 		var infos = data.algodata;
 		var datainput = resultvalue;
 		console.log("input:");
 	    console.log(data.input);
+		
+		if(isRephrased){
+			console.log("rephrasedInput:");
+			console.log(datainput);
+		}
 	
 		var allkeywords = [];
 		var results = [];
@@ -148,7 +153,14 @@ module.exports = function(data, isRake, useOpenAI) {
 		sim.sort((a, b) => b.cosineSimilarity - a.cosineSimilarity);
 		console.log("result");
 		console.log(sim);
-		return sim;
+		
+		if(isRephrased){
+			return {result: sim, rephrasedInput: datainput}
+		}else{
+			return {result: sim}
+		}
+		
+		//return sim;
 	}
     
 	//-------------------------------------------------------------------------------------------- 
