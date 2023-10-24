@@ -1,6 +1,6 @@
 # QAIsup Backend
 
-## How to run
+### How to run
 
 Install the required packages with:
 
@@ -11,3 +11,7 @@ To start the backend run:
 ``C:\PATH\QAIsup_Patternatlas> node server.js``
 
 The backend runs on Port: 1985
+
+### OpenAI functionality
+
+To use the [OpenAI](https://openai.com/) functionality of the backend, rename _.env to .env and insert your own OpenAI API key.
