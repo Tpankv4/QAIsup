@@ -1,6 +1,7 @@
 # QAIsup Backend
 
 ### How to run
+The backend uses [node](https://nodejs.org/en) version 16.20.2
 
 Install the required packages with:
 
