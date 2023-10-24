@@ -15,6 +15,8 @@ A quantum algorithm as a solution, as well as quantum computing patterns to supp
 The project is based on the [Patternatlas](https://github.com/PatternAtlas).
 Multiple parts of the patternatlas implementation are extended in this project.
 
+When everything is running, look at http://localhost:1978.
+
 ### Frontend
 The Frontend is an extension of the [Patternatlas UI](https://github.com/PatternAtlas/pattern-atlas-ui).
 
