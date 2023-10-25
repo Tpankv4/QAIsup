@@ -148,7 +148,7 @@ module.exports = function(data, isRake, useOpenAI) {
 		// cosine similarity with keywords
 		var sim = [];
 		results.forEach(alg => {
-			sim.push({name: alg.name, cosineSimilarity: textCosineSimilarity2(alg.occurrences, extraction_result_input)});
+			sim.push({name: alg.name, cosineSimilarity: textCosineSimilarity(alg.occurrences, extraction_result_input)});
 		});
 		sim.sort((a, b) => b.cosineSimilarity - a.cosineSimilarity);
 		console.log("result");
@@ -160,51 +160,14 @@ module.exports = function(data, isRake, useOpenAI) {
 			return {result: sim}
 		}
 		
-		//return sim;
 	}
     
 	//-------------------------------------------------------------------------------------------- 
 	// https://sumn2u.medium.com/string-similarity-comparision-in-js-with-examples-4bae35f13968
 	//--------------------------------------------------------------------------------------------
 	
-	//can be removed
-	function calculateTextCosineSimilarity(){
-		var cosinesimilarities = [];
-		this.infos.forEach(algorithminfo => {
-			var applicationareaskeywords2 = []; 
-			var problemtypeskeywords2 = [];
-			algorithminfo.data.applicationAreas.forEach(word => {
-				applicationareaskeywords2.push(word.label);
-				applicationareaskeywords2.push(word.label);
-				applicationareaskeywords2.push(word.label);
-				applicationareaskeywords2.push(word.label);
-			});
-			algorithminfo.data.problemTypes.forEach(word => {
-				problemtypeskeywords2.push(word.label);
-				problemtypeskeywords2.push(word.label);
-				problemtypeskeywords2.push(word.label);
-				problemtypeskeywords2.push(word.label);
-			});
-			var wordarray = algorithminfo.data.intent.concat(algorithminfo.data.intent).concat(algorithminfo.data.problem, algorithminfo.data.solution)
-			              .concat(applicationareaskeywords2, problemtypeskeywords2);
-			cosinesimilarities.push({name: algorithminfo.name, cosineSimilarity: this.textCosineSimilarity(wordarray, this.filter.value)});
-		});
-		console.log("cosinesimilarities for text:");
-		console.log(cosinesimilarities);
-		return cosinesimilarities;
-		
-	}
-  
-    function termFreqMap(str) {
-        var words = str.split(' ');
-        var termFreq = {};
-        words.forEach(function(w) {
-            termFreq[w] = (termFreq[w] || 0) + 1;
-        });
-        return termFreq;
-    }
 	
-	function termFreqMap2(array) {
+	function termFreqMap(array) {
         var termFreq = {};
         array.forEach(function(w) {
             termFreq[w] = (termFreq[w] || 0) + 1;
@@ -246,22 +209,9 @@ module.exports = function(data, isRake, useOpenAI) {
         return vecDotProduct(vecA, vecB) / (vecMagnitude(vecA) * vecMagnitude(vecB));
     }
 
-    function textCosineSimilarity(strA, strB) {
-        var termFreqA = this.termFreqMap(strA);
-        var termFreqB = this.termFreqMap(strB);
-
-        var dict = {};
-        addKeysToDict(termFreqA, dict);
-        addKeysToDict(termFreqB, dict);
-
-        var termFreqVecA = this.termFreqMapToVector(termFreqA, dict);
-        var termFreqVecB = this.termFreqMapToVector(termFreqB, dict);
-
-        return this.cosineSimilarity(termFreqVecA, termFreqVecB);
-    }
 	
-	function textCosineSimilarity2(occurences, input) {
-        var termFreqB = termFreqMap2(input);
+	function textCosineSimilarity(occurences, input) {
+        var termFreqB = termFreqMap(input);
 
         var dict = {};
         addKeysToDict(occurences, dict);
