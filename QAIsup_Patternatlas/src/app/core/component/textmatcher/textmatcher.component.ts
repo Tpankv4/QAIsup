@@ -57,6 +57,7 @@ export class TextmatcherComponent implements OnInit {
 			this.fulltabledata = this.data.prev[0].fulltabledata;
 			this.columnsToDisplay = this.data.prev[0].columnsToDisplay;
 			this.rephrasedInput = this.data.prev[0].rephrasedInput;
+			this.selectednumber = this.data.prev[0].selectedNumber;
 			
 			if (this.data.prev[0].inputfieldvalue != ''){
 				this.inputfield = new FormControl(this.data.prev[0].inputfieldvalue);
@@ -105,7 +106,8 @@ export class TextmatcherComponent implements OnInit {
 			fulltabledata: this.fulltabledata,
 			columnsToDisplay: this.columnsToDisplay,
 			inputfieldvalue: this.inputfield.value,
-			rephrasedInput: this.rephrasedInput,};
+			rephrasedInput: this.rephrasedInput,
+			selectedNumber: this.selectednumber,};
 			
 		this.dialogRef.close({algoname: algorithmName, prev: previous});
 	}
@@ -117,7 +119,8 @@ export class TextmatcherComponent implements OnInit {
 				fulltabledata: this.fulltabledata,
 				columnsToDisplay: this.columnsToDisplay,
 				inputfieldvalue: this.inputfield.value,
-				rephrasedInput: this.rephrasedInput,};
+				rephrasedInput: this.rephrasedInput,
+				selectedNumber: this.selectednumber,};
 			
 			this.dialogRef.close({algoname: undefined, prev: previous});
 		}else{
@@ -127,7 +130,7 @@ export class TextmatcherComponent implements OnInit {
 	
    
     openLink(){
-		let alg = this.data.data.inputfield(algorithm => algorithm.name == this.resultAlgorithm.name);
+		let alg = this.data.data.filter(algorithm => algorithm.name == this.resultAlgorithm.name);
 		if(alg.length > 0){	
 			this.closeDialog(this.resultAlgorithm.name);
 		};
@@ -135,7 +138,7 @@ export class TextmatcherComponent implements OnInit {
     }
 	
 	openLink2(algname){
-		let alg = this.data.data.inputfield(algorithm => algorithm.name == algname);
+		let alg = this.data.data.filter(algorithm => algorithm.name == algname);
 		    if(alg.length > 0){	
 				this.closeDialog(algname);
 		    };
